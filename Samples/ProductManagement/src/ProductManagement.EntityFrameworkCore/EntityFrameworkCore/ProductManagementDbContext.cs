@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductManagement.Categories;
+using ProductManagement.Products;
 using ProductManagement.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -22,6 +24,10 @@ namespace ProductManagement.EntityFrameworkCore
     {
         public DbSet<AppUser> Users { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside ProductManagementDbContextModelCreatingExtensions.ConfigureProductManagement
          */
@@ -41,7 +47,7 @@ namespace ProductManagement.EntityFrameworkCore
             builder.Entity<AppUser>(b =>
             {
                 b.ToTable(AbpIdentityDbProperties.DbTablePrefix + "Users"); //Sharing the same table "AbpUsers" with the IdentityUser
-                
+
                 b.ConfigureByConvention();
                 b.ConfigureAbpUser();
 

@@ -9,14 +9,7 @@ namespace ProductManagement.EntityFrameworkCore
         {
             Check.NotNull(builder, nameof(builder));
 
-            /* Configure your own tables/entities inside here */
-
-            //builder.Entity<YourEntity>(b =>
-            //{
-            //    b.ToTable(ProductManagementConsts.DbTablePrefix + "YourEntities", ProductManagementConsts.DbSchema);
-            //    b.ConfigureByConvention(); //auto configure for the base class props
-            //    //...
-            //});
+            //TODO: Map category & product
         }
     }
 }
