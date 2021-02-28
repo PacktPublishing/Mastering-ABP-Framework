@@ -3,7 +3,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace ProductManagement.Products
 {
-    public class ProductDto : EntityDto<Guid>
+    public class ProductDto : AuditedEntityDto<Guid>
     {
         public string CategoryName { get; set; }
         public string Name { get; set; }
