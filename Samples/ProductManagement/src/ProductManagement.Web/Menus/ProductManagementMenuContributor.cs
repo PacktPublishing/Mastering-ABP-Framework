@@ -29,6 +29,20 @@ namespace ProductManagement.Web.Menus
             var l = context.GetLocalizer<ProductManagementResource>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ProductManagementMenus.Home, l["Menu:Home"], "~/"));
+
+            context.Menu.AddItem(
+                new ApplicationMenuItem(
+                    "ProductManagement",
+                    l["Menu:ProductManagement"],
+                    icon: "fas fa-shopping-cart"
+                ).AddItem(
+                    new ApplicationMenuItem(
+                        "ProductManagement.Products",
+                        l["Menu:Products"],
+                        url: "/Products"
+                    )
+                )
+            );
         }
     }
 }
