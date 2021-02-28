@@ -47,6 +47,7 @@ namespace ProductManagement.Data
                 Category = monitors,
                 Name = "Clips 328E1CA 32-Inch Curved Monitor, 4K UHD",
                 Price = 349,
+                IsFreeCargo = true,
                 ReleaseDate = new DateTime(2022, 02, 01),
                 StockState = ProductStockState.PreOrder
             };
@@ -55,7 +56,7 @@ namespace ProductManagement.Data
             {
                 Category = printers,
                 Name = "Acme Monochrome Laser Printer, Compact All-In One",
-                Price = 349,
+                Price = 199,
                 ReleaseDate = new DateTime(2020, 11, 16),
                 StockState = ProductStockState.NotAvailable
             };
