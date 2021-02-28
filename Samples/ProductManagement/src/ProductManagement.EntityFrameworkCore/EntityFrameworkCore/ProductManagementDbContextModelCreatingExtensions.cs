@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductManagement.Categories;
+using ProductManagement.Products;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace ProductManagement.EntityFrameworkCore
 {
@@ -9,7 +12,24 @@ namespace ProductManagement.EntityFrameworkCore
         {
             Check.NotNull(builder, nameof(builder));
 
-            //TODO: Map category & product
+            builder.Entity<Category>(b =>
+            {
+                b.ToTable("Categories");
+                b.ConfigureByConvention();
+                b.Property(x => x.Name)
+                    .HasMaxLength(CategoryConsts.MaxNameLength)
+                    .IsRequired();
+                b.HasIndex(x => x.Name);
+            });
+
+            builder.Entity<Product>(b =>
+            {
+                b.ToTable("Products");
+                b.ConfigureByConvention();
+                b.Property(x => x.Name).HasMaxLength(ProductConsts.MaxNameLength).IsRequired();
+                b.HasOne(x => x.Category).WithMany().HasForeignKey(x => x.CategoryId).IsRequired();
+                b.HasIndex(x => x.Name);
+            });
         }
     }
 }
