@@ -51,7 +51,7 @@ namespace ProductManagement.Products
                 async () => await GetRequiredService<IRepository<Category, Guid>>().FirstAsync()
             );
             
-            var createProductDto = new CreateProductDto
+            var createProductDto = new CreateUpdateProductDto
             {
                 Name = "Tarsus Gaming Laptop 17\"",
                 Price = 2999,
@@ -83,7 +83,7 @@ namespace ProductManagement.Products
                 async () => await GetRequiredService<IRepository<Category, Guid>>().FirstAsync()
             );
             
-            var createProductDto = new CreateProductDto
+            var createProductDto = new CreateUpdateProductDto
             {
                 // Name is not provided, so we are expecting a validation error 
                 Price = 2999,
@@ -97,7 +97,7 @@ namespace ProductManagement.Products
                 await _productAppService.CreateAsync(createProductDto)
             );
             
-            exception.ValidationErrors.ShouldContain(x => x.MemberNames.Contains(nameof(CreateProductDto.Name)));
+            exception.ValidationErrors.ShouldContain(x => x.MemberNames.Contains(nameof(CreateUpdateProductDto.Name)));
         }
     }
 }

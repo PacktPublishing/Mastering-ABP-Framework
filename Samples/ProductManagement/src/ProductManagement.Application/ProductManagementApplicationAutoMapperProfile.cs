@@ -9,7 +9,7 @@ namespace ProductManagement
         public ProductManagementApplicationAutoMapperProfile()
         {
             CreateMap<Product, ProductDto>();
-            CreateMap<CreateProductDto, Product>();
+            CreateMap<CreateUpdateProductDto, Product>();
             CreateMap<Category, CategoryLookupDto>();
         }
     }

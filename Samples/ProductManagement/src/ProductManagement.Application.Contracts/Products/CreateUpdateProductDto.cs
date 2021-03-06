@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProductManagement.Products
 {
-    public class CreateProductDto
+    public class CreateUpdateProductDto
     {
         public Guid CategoryId { get; set; }
         [Required]

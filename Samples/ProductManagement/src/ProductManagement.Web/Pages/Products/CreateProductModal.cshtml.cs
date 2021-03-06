@@ -37,7 +37,7 @@ namespace ProductManagement.Web.Pages.Products
         {
             await _productAppService.CreateAsync(
                 ObjectMapper
-                    .Map<CreateProductViewModel, CreateProductDto>(Product)
+                    .Map<CreateProductViewModel, CreateUpdateProductDto>(Product)
             );
             return NoContent();
         }

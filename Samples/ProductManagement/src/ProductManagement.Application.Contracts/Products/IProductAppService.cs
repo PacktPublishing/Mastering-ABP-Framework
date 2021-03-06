@@ -10,7 +10,7 @@ namespace ProductManagement.Products
         Task<PagedResultDto<ProductDto>>
             GetListAsync(PagedAndSortedResultRequestDto input);
 
-        Task CreateAsync(CreateProductDto input);
+        Task CreateAsync(CreateUpdateProductDto input);
 
         Task<ListResultDto<CategoryLookupDto>> GetCategoriesAsync();
     }

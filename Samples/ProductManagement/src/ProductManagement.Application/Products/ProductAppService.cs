@@ -43,10 +43,10 @@ namespace ProductManagement.Products
             );
         }
 
-        public async Task CreateAsync(CreateProductDto input)
+        public async Task CreateAsync(CreateUpdateProductDto input)
         {
             await _productRepository.InsertAsync(
-                ObjectMapper.Map<CreateProductDto, Product>(input)
+                ObjectMapper.Map<CreateUpdateProductDto, Product>(input)
             );
         }
 
