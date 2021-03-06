@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ProductManagement.Categories;
 using ProductManagement.Products;
 
 namespace ProductManagement
@@ -8,6 +9,8 @@ namespace ProductManagement
         public ProductManagementApplicationAutoMapperProfile()
         {
             CreateMap<Product, ProductDto>();
+            CreateMap<CreateProductDto, Product>();
+            CreateMap<Category, CategoryLookupDto>();
         }
     }
 }

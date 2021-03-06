@@ -14,6 +14,10 @@
     "Enum:StockState:1": "In stock",
     "Enum:StockState:2": "Not available",
     "Enum:StockState:3": "Stopped",
-    "CreationTime": "Creation time"
+    "CreationTime": "Creation time",
+    "NewProduct": "New Product",
+    "Category": "Category",
+    "IsFreeCargo": "Free Cargo",
+    "ReleaseDate": "Release Date"
   }
 }
