@@ -1,5 +1,6 @@
 ﻿$(function () {
     var l = abp.localization.getResource('ProductManagement');
+    var editModal = new abp.ModalManager(abp.appPath + 'Products/EditProductModal');
 
     var dataTable = $('#ProductsTable').DataTable(
         abp.libs.datatables.normalizeConfiguration({
@@ -10,6 +11,20 @@
             scrollX: true,
             ajax: abp.libs.datatables.createAjax(productManagement.products.product.getList),
             columnDefs: [
+                {
+                    title: l('Actions'),
+                    rowAction: {
+                        items:
+                            [
+                                {
+                                    text: l('Edit'),
+                                    action: function (data) {
+                                        editModal.open({ id: data.record.id });
+                                    }
+                                }
+                            ]
+                    }
+                },
                 {
                     title: l('Name'),
                     data: "name"
@@ -48,5 +63,9 @@
     $('#NewProductButton').click(function (e) {
         e.preventDefault();
         createModal.open();
+    });
+
+    editModal.onResult(function () {
+        dataTable.ajax.reload();
     });
 });

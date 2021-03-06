@@ -47,7 +47,7 @@ namespace ProductManagement.Products
         [Fact]
         public async Task Should_Create_A_Valid_Product()
         {
-            var firstCategory = await WithUnitOfWorkAsync(
+            var category = await WithUnitOfWorkAsync(
                 async () => await GetRequiredService<IRepository<Category, Guid>>().FirstAsync()
             );
             
@@ -57,7 +57,7 @@ namespace ProductManagement.Products
                 Price = 2999,
                 ReleaseDate = DateTime.Now,
                 StockState = ProductStockState.InStock,
-                CategoryId = firstCategory.Id,
+                CategoryId = category.Id,
                 IsFreeCargo = true
             };
             
@@ -79,7 +79,7 @@ namespace ProductManagement.Products
         [Fact]
         public async Task Should_Not_Allow_To_Create_Invalid_Product()
         {
-            var firstCategory = await WithUnitOfWorkAsync(
+            var category = await WithUnitOfWorkAsync(
                 async () => await GetRequiredService<IRepository<Category, Guid>>().FirstAsync()
             );
             
@@ -89,7 +89,7 @@ namespace ProductManagement.Products
                 Price = 2999,
                 ReleaseDate = DateTime.Now,
                 StockState = ProductStockState.InStock,
-                CategoryId = firstCategory.Id,
+                CategoryId = category.Id,
                 IsFreeCargo = true
             };
 
@@ -98,6 +98,59 @@ namespace ProductManagement.Products
             );
             
             exception.ValidationErrors.ShouldContain(x => x.MemberNames.Contains(nameof(CreateUpdateProductDto.Name)));
+        }
+
+        [Fact]
+        public async Task Should_Get_Product()
+        {
+            var product = await WithUnitOfWorkAsync(
+                async () => await GetRequiredService<IRepository<Product, Guid>>().FirstAsync()
+            );
+            
+            var category = await WithUnitOfWorkAsync(
+                async () => await GetRequiredService<IRepository<Category, Guid>>().FirstAsync(x => x.Id == product.CategoryId)
+            );
+
+            var productDto = await _productAppService.GetAsync(product.Id);
+            
+            productDto.Id.ShouldBe(product.Id);
+            productDto.Name.ShouldBe(product.Name);
+            productDto.CategoryName.ShouldBe(category.Name);
+            productDto.Price.ShouldBe(product.Price);
+            productDto.IsFreeCargo.ShouldBe(product.IsFreeCargo);
+            productDto.StockState.ShouldBe(product.StockState);
+        }
+
+        [Fact]
+        public async Task Should_Update_Product()
+        {
+            var productRepository = GetRequiredService<IRepository<Product, Guid>>();
+            
+            var product = await WithUnitOfWorkAsync(
+                async () => await productRepository.FirstAsync(x => x.Name == "Clips 328E1CA 32-Inch Curved Monitor, 4K UHD")
+            );
+            
+            await _productAppService.UpdateAsync(
+                product.Id,
+                new CreateUpdateProductDto
+                {
+                    Name = "Updated product name",
+                    Price = 999,
+                    StockState = ProductStockState.NotAvailable,
+                    IsFreeCargo = false,
+                    CategoryId = product.CategoryId,
+                    ReleaseDate = product.ReleaseDate
+                }
+            );
+            
+            product = await WithUnitOfWorkAsync(
+                async () => await productRepository.GetAsync(product.Id)
+            );
+            
+            product.Name.ShouldBe("Updated product name");
+            product.Price.ShouldBe(999);
+            product.StockState.ShouldBe(ProductStockState.NotAvailable);
+            product.IsFreeCargo.ShouldBeFalse();
         }
     }
 }

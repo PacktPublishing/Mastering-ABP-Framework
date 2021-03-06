@@ -5,6 +5,7 @@ namespace ProductManagement.Products
 {
     public class ProductDto : AuditedEntityDto<Guid>
     {
+        public Guid CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string Name { get; set; }
         public float Price { get; set; }

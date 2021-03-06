@@ -6,7 +6,7 @@ using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Form;
 
 namespace ProductManagement.Web.Pages.Products
 {
-    public class CreateProductViewModel
+    public class CreateEditProductViewModel
     {
         [SelectItems(nameof(CreateProductModal.Categories))]
         [DisplayName("Category")]
