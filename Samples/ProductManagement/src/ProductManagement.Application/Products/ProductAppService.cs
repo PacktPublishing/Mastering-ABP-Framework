@@ -34,8 +34,8 @@ namespace ProductManagement.Products
                 .Take(input.MaxResultCount)
                 .OrderBy(input.Sorting ?? nameof(Product.Name));
 
-            var count = await AsyncExecuter.CountAsync(queryable);
             var products = await AsyncExecuter.ToListAsync(queryable);
+            var count = await _productRepository.GetCountAsync();
 
             return new PagedResultDto<ProductDto>(
                 count,
@@ -61,7 +61,7 @@ namespace ProductManagement.Products
         public async Task<ProductDto> GetAsync(Guid id)
         {
             return ObjectMapper.Map<Product, ProductDto>(
-                await _productRepository.GetAsync(id, includeDetails: false)
+                await _productRepository.GetAsync(id)
             );
         }
 
