@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ProductManagement.Products;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -49,15 +47,6 @@ namespace ProductManagement.EntityFrameworkCore
                 /* The main point to change your DBMS.
                  * See also ProductManagementMigrationsDbContextFactory for EF Core tooling. */
                 options.UseSqlServer();
-            });
-
-            Configure<AbpEntityOptions>(options =>
-            {
-                options.Entity<Product>(product =>
-                {
-                    product.DefaultWithDetailsFunc =
-                        query => query.Include(x => x.Category);
-                });
             });
         }
     }

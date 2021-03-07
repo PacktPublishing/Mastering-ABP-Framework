@@ -115,7 +115,6 @@ namespace ProductManagement.Products
             
             productDto.Id.ShouldBe(product.Id);
             productDto.Name.ShouldBe(product.Name);
-            productDto.CategoryName.ShouldBe(category.Name);
             productDto.Price.ShouldBe(product.Price);
             productDto.IsFreeCargo.ShouldBe(product.IsFreeCargo);
             productDto.StockState.ShouldBe(product.StockState);
