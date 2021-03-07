@@ -9,7 +9,8 @@
             order: [[0, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: abp.libs.datatables.createAjax(productManagement.products.product.getList),
+            ajax: abp.libs.datatables.createAjax(
+                productManagement.products.product.getList),
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -30,7 +31,7 @@
                                     action: function (data) {
                                         productManagement.products.product
                                             .delete(data.record.id)
-                                            .then(function() {
+                                            .then(function () {
                                                 abp.notify.info(l('SuccessfullyDeleted'));
                                                 dataTable.ajax.reload();
                                             });
@@ -68,6 +69,10 @@
         })
     );
 
+    editModal.onResult(function () {
+        dataTable.ajax.reload();
+    });
+
     var createModal = new abp.ModalManager(abp.appPath + 'Products/CreateProductModal');
 
     createModal.onResult(function () {
@@ -77,9 +82,5 @@
     $('#NewProductButton').click(function (e) {
         e.preventDefault();
         createModal.open();
-    });
-
-    editModal.onResult(function () {
-        dataTable.ajax.reload();
     });
 });

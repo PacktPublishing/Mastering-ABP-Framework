@@ -258,3 +258,4 @@ src/ProductManagement.IdentityServer/Logs/*
 src/ProductManagement.HttpApi.Host/Logs/*
 src/ProductManagement.HttpApi.HostWithIds/Logs/*
 src/ProductManagement.DbMigrator/Logs/*
+ProductManagement.sln.DotSettings

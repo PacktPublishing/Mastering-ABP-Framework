@@ -50,12 +50,13 @@ namespace ProductManagement.EntityFrameworkCore
                  * See also ProductManagementMigrationsDbContextFactory for EF Core tooling. */
                 options.UseSqlServer();
             });
-            
+
             Configure<AbpEntityOptions>(options =>
             {
                 options.Entity<Product>(product =>
                 {
-                    product.DefaultWithDetailsFunc = query => query.Include(x => x.Category);
+                    product.DefaultWithDetailsFunc =
+                        query => query.Include(x => x.Category);
                 });
             });
         }

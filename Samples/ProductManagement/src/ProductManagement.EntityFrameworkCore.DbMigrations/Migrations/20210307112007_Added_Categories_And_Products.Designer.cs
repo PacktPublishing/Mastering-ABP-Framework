@@ -11,7 +11,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace ProductManagement.Migrations
 {
     [DbContext(typeof(ProductManagementMigrationsDbContext))]
-    [Migration("20210228085957_Added_Categories_And_Products")]
+    [Migration("20210307112007_Added_Categories_And_Products")]
     partial class Added_Categories_And_Products
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -2063,7 +2063,7 @@ namespace ProductManagement.Migrations
                     b.HasOne("ProductManagement.Categories.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");

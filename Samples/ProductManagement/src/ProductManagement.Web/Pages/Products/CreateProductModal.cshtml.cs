@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -6,7 +6,7 @@ using ProductManagement.Products;
 
 namespace ProductManagement.Web.Pages.Products
 {
-    public class CreateProductModal : ProductManagementPageModel
+    public class CreateProductModalModel : ProductManagementPageModel
     {
         [BindProperty]
         public CreateEditProductViewModel Product { get; set; }
@@ -14,11 +14,11 @@ namespace ProductManagement.Web.Pages.Products
 
         private readonly IProductAppService _productAppService;
 
-        public CreateProductModal(IProductAppService productAppService)
+        public CreateProductModalModel(IProductAppService productAppService)
         {
             _productAppService = productAppService;
         }
-        
+
         public async Task OnGetAsync()
         {
             Product = new CreateEditProductViewModel
@@ -26,8 +26,9 @@ namespace ProductManagement.Web.Pages.Products
                 ReleaseDate = Clock.Now,
                 StockState = ProductStockState.PreOrder
             };
-            
-            var categoryLookup = await _productAppService.GetCategoriesAsync();
+
+            var categoryLookup =
+                await _productAppService.GetCategoriesAsync();
             Categories = categoryLookup.Items
                 .Select(x => new SelectListItem(x.Name, x.Id.ToString()))
                 .ToArray();
@@ -36,7 +37,8 @@ namespace ProductManagement.Web.Pages.Products
         public async Task<IActionResult> OnPostAsync()
         {
             await _productAppService.CreateAsync(
-                ObjectMapper.Map<CreateEditProductViewModel, CreateUpdateProductDto>(Product)
+                ObjectMapper
+                    .Map<CreateEditProductViewModel, CreateUpdateProductDto>(Product)
             );
             return NoContent();
         }

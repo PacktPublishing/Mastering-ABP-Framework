@@ -2,12 +2,13 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using ProductManagement.Localization
 @using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
-@model ProductManagement.Web.Pages.Products.CreateProductModal
+@model ProductManagement.Web.Pages.Products.CreateProductModalModel
 @inject IHtmlLocalizer<ProductManagementResource> L
 @{
     Layout = null;
 }
-<abp-dynamic-form abp-model="Product" asp-page="/Products/CreateProductModal">
+<abp-dynamic-form abp-model="Product"
+                  asp-page="/Products/CreateProductModal">
     <abp-modal>
         <abp-modal-header title="@L["NewProduct"].Value"></abp-modal-header>
         <abp-modal-body>
