@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Volo.Abp.DependencyInjection;
 
@@ -28,10 +29,14 @@ namespace SmsSending
 
     public class AzureSmsService : ISmsService, ITransientDependency
     {
+        private readonly ILogger<AzureSmsService> _logger;
         private readonly AzureSmsServiceOptions _options;
 
-        public AzureSmsService(IOptions<AzureSmsServiceOptions> options)
+        public AzureSmsService(
+            IOptions<AzureSmsServiceOptions> options,
+            ILogger<AzureSmsService> logger)
         {
+            _logger = logger;
             _options = options.Value;
         }
 
@@ -39,6 +44,8 @@ namespace SmsSending
         {
             string sender = _options.Sender;
             string connStr = _options.ConnStr;
+            _logger.LogInformation(
+                $"Sending SMS to {phoneNumber}: {message}");
             //TODO...
         }
     }
