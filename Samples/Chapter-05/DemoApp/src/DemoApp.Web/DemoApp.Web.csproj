@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SmsSending\SmsSending.csproj" />
     <ProjectReference Include="..\DemoApp.Application\DemoApp.Application.csproj" />
     <ProjectReference Include="..\DemoApp.HttpApi\DemoApp.HttpApi.csproj" />
     <ProjectReference Include="..\DemoApp.EntityFrameworkCore.DbMigrations\DemoApp.EntityFrameworkCore.DbMigrations.csproj" />

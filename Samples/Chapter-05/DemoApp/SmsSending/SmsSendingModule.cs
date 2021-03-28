@@ -8,7 +8,7 @@ namespace SmsSending
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddTransient<SmsService>();
+            
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
