@@ -8,7 +8,10 @@ namespace SmsSending
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            var configuration = context.Services.GetConfiguration();
             
+            Configure<AzureSmsServiceOptions>(
+                configuration.GetSection("AzureSmsService"));
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
