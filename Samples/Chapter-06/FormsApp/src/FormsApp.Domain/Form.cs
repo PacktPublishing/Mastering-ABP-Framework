@@ -9,7 +9,7 @@ namespace FormsApp
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsDraft { get; set; }
-        public ICollection<Question> Questions { get; set; }
-        public ICollection<FormManager> Owners { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<FormManager> Owners { get; set; }
     }
 }
