@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8067AED-2B6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp.Domain", "src\FormsApp.Domain\FormsApp.Domain.csproj", "{76F9CFDE-2200-4D3D-BB72-67CBED8F0FD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp.EntityFrameworkCore", "src\FormsApp.EntityFrameworkCore\FormsApp.EntityFrameworkCore.csproj", "{BCAE85C8-99EE-4CCA-BC90-FF028300476F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +22,14 @@ Global
 		{76F9CFDE-2200-4D3D-BB72-67CBED8F0FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76F9CFDE-2200-4D3D-BB72-67CBED8F0FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76F9CFDE-2200-4D3D-BB72-67CBED8F0FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCAE85C8-99EE-4CCA-BC90-FF028300476F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAE85C8-99EE-4CCA-BC90-FF028300476F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAE85C8-99EE-4CCA-BC90-FF028300476F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAE85C8-99EE-4CCA-BC90-FF028300476F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{00A2F7A3-BEC3-48F4-A91C-5A336C32A5D2} = {E8067AED-2B6E-4134-AAF8-9101457D709A}
 		{76F9CFDE-2200-4D3D-BB72-67CBED8F0FD0} = {E8067AED-2B6E-4134-AAF8-9101457D709A}
+		{BCAE85C8-99EE-4CCA-BC90-FF028300476F} = {E8067AED-2B6E-4134-AAF8-9101457D709A}
 	EndGlobalSection
 EndGlobal
