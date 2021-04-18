@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>FormsApp</RootNamespace>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.MongoDB" Version="4.3.0-rc.2" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\FormsApp.Domain\FormsApp.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
