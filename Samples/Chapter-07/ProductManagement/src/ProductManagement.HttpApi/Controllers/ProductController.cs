@@ -7,6 +7,7 @@ using Volo.Abp.AspNetCore.Mvc;
 
 namespace ProductManagement.Controllers
 {
+    /* Using permission based authorization with IAuthorizationService        
     public class ProductController : AbpController
     {
         private readonly IAuthorizationService _authorizationService;
@@ -36,7 +37,7 @@ namespace ProductManagement.Controllers
             //TODO: Create the product
         }
     }
-    
+    */
     /* Using permission based authorization with [Authorize] attribute */
     /*
     public class ProductController : Controller
@@ -91,10 +92,6 @@ namespace ProductManagement.Controllers
         public async Task DeleteAsync(Guid id)
         {
         }
-    }
-
-    public class ProductCreationDto
-    {
     }
 
     public class ProductDto

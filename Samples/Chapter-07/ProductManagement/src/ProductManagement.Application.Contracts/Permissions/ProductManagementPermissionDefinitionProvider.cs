@@ -13,9 +13,9 @@ namespace ProductManagement.Permissions
             var myGroup = context.AddGroup(
                 "ProductManagement",
                 L("ProductManagement"));
-            myGroup.AddPermission(
-                "ProductManagement.ProductCreation",
-                L("ProductCreation"));
+            // myGroup.AddPermission(
+            //     "ProductManagement.ProductCreation",
+            //     L("ProductCreation"));
             myGroup.AddPermission(
                 "ProductManagement.ProductDeletion",
                 L("ProductDeletion"));

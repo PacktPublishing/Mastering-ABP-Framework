@@ -1,4 +1,7 @@
-﻿using Localization.Resources.AbpUi;
+﻿using System.Linq;
+using Localization.Resources.AbpUi;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.DependencyInjection;
 using ProductManagement.Localization;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
@@ -24,6 +27,22 @@ namespace ProductManagement
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<AuthorizationOptions>(options =>
+            {
+                options.AddPolicy(
+                    "ProductManagement.ProductCreation",
+                    policy =>
+                    {
+                        policy.Requirements.Add(
+                            new ProductCreationRequirement()
+                        );
+                    });
+            });
+
+            context.Services.AddSingleton<
+                IAuthorizationHandler, 
+                ProductCreationRequirementHandler>();
+            
             ConfigureLocalization();
         }
 
