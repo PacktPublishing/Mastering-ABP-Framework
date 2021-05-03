@@ -6,5 +6,7 @@ namespace ProductManagement.Products
     public interface IProductAppService : IApplicationService
     {
         Task CreateAsync(ProductCreationDto input);
+
+        Task ExampleThrowsExceptionAsync();
     }
 }
