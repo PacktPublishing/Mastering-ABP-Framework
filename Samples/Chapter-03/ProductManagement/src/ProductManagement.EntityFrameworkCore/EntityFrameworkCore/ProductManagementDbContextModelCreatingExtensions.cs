@@ -20,7 +20,7 @@ namespace ProductManagement.EntityFrameworkCore
 				b.Property(x => x.Name)
 					.HasMaxLength(CategoryConsts.MaxNameLength)
 					.IsRequired();
-				b.HasIndex(x => x.Name);
+				b.HasIndex(x => x.Name).IsUnique();
 			});
 
 			builder.Entity<Product>(b =>
