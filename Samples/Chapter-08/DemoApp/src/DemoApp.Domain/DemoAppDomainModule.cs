@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using DemoApp.MultiTenancy;
+using Volo.Abp;
+using Volo.Abp.Auditing;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.Emailing;
@@ -33,6 +35,14 @@ namespace DemoApp
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<AbpAuditingOptions>(options =>
+            {
+                //options.IsEnabled = false;
+                //options.EntityHistorySelectors.Add(
+                //    new NamedTypeSelector("MySelectorName", type => type == typeof(MyEntity))
+                //);
+            });
+            
             Configure<AbpMultiTenancyOptions>(options =>
             {
                 options.IsEnabled = MultiTenancyConsts.IsEnabled;

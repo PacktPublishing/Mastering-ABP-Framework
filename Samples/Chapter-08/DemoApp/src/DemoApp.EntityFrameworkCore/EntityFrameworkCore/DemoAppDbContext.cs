@@ -78,11 +78,11 @@ namespace DemoApp.EntityFrameworkCore
 
             if (typeof(IArchivable).IsAssignableFrom(typeof(TEntity)))
             {
-                Expression<Func<TEntity, bool>> isActiveFilter =
+                Expression<Func<TEntity, bool>> archiveFilter =
                     e => !IsArchiveFilterEnabled || !EF.Property<bool>(e, nameof(IArchivable.IsArchived));
                 expression = expression == null 
-                    ? isActiveFilter 
-                    : CombineExpressions(expression, isActiveFilter);
+                    ? archiveFilter 
+                    : CombineExpressions(expression, archiveFilter);
             }
 
             return expression;
