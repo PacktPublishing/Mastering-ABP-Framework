@@ -5,10 +5,11 @@ using Volo.Abp.MultiTenancy;
 
 namespace DemoApp
 {
-    public class Order : AggregateRoot<Guid>, ISoftDelete, IMultiTenant
+    public class Order : AggregateRoot<Guid>, ISoftDelete, IMultiTenant, IArchivable
     {
         public bool IsDeleted { get; set; }
         public Guid? TenantId { get; set; }
+        public bool IsArchived { get; set; }
         //...other properties
     }
 }

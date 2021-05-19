@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using DemoApp.Users;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -20,7 +23,11 @@ namespace DemoApp.EntityFrameworkCore
     [ConnectionStringName("Default")]
     public class DemoAppDbContext : AbpDbContext<DemoAppDbContext>
     {
+        protected bool IsArchiveFilterEnabled => DataFilter?.IsEnabled<IArchivable>() ?? false;
+        
         public DbSet<AppUser> Users { get; set; }
+        
+        public DbSet<Order> Orders { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside DemoAppDbContextModelCreatingExtensions.ConfigureDemoApp
@@ -53,6 +60,32 @@ namespace DemoApp.EntityFrameworkCore
             /* Configure your own tables/entities inside the ConfigureDemoApp method */
 
             builder.ConfigureDemoApp();
+        }
+
+        protected override bool ShouldFilterEntity<TEntity>(IMutableEntityType entityType)
+        {
+            if (typeof(IArchivable).IsAssignableFrom(typeof(TEntity)))
+            {
+                return true;
+            }
+            
+            return base.ShouldFilterEntity<TEntity>(entityType);
+        }
+        
+        protected override Expression<Func<TEntity, bool>> CreateFilterExpression<TEntity>()
+        {
+            var expression = base.CreateFilterExpression<TEntity>();
+
+            if (typeof(IArchivable).IsAssignableFrom(typeof(TEntity)))
+            {
+                Expression<Func<TEntity, bool>> isActiveFilter =
+                    e => !IsArchiveFilterEnabled || !EF.Property<bool>(e, nameof(IArchivable.IsArchived));
+                expression = expression == null 
+                    ? isActiveFilter 
+                    : CombineExpressions(expression, isActiveFilter);
+            }
+
+            return expression;
         }
     }
 }

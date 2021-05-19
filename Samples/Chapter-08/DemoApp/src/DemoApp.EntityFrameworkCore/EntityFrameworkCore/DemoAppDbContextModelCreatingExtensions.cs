@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace DemoApp.EntityFrameworkCore
 {
@@ -17,6 +18,12 @@ namespace DemoApp.EntityFrameworkCore
             //    b.ConfigureByConvention(); //auto configure for the base class props
             //    //...
             //});
+
+            builder.Entity<Order>(b =>
+            {
+                b.ToTable("Orders");
+                b.ConfigureByConvention();
+            });
         }
     }
 }
