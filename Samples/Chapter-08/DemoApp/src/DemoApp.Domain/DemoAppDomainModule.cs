@@ -1,10 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using DemoApp.MultiTenancy;
+using Microsoft.Extensions.Caching.Distributed;
 using Volo.Abp;
 using Volo.Abp.Auditing;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
+using Volo.Abp.Caching;
 using Volo.Abp.Emailing;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -41,6 +44,15 @@ namespace DemoApp
                 //options.EntityHistorySelectors.Add(
                 //    new NamedTypeSelector("MySelectorName", type => type == typeof(MyEntity))
                 //);
+            });
+            
+            Configure<AbpDistributedCacheOptions>(options =>
+            {
+                options.GlobalCacheEntryOptions
+                    .AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(2);
+                options.KeyPrefix = "MyApp";
+                options.HideErrors = false;
+                options.CacheConfigurators.Add(cacheName => new DistributedCacheEntryOptions());
             });
             
             Configure<AbpMultiTenancyOptions>(options =>
