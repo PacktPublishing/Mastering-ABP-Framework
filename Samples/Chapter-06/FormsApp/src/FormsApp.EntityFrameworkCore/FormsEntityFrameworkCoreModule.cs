@@ -37,7 +37,7 @@ namespace FormsApp
                 {
                     orderOptions.DefaultWithDetailsFunc = query => query
                         .Include(f => f.Questions)
-                        .Include(f => f.Owners);
+                        .Include(f => f.Managers);
                 });
             });
         }
