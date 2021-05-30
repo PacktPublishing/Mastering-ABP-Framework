@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Volo.Abp.DependencyInjection;
 
 namespace DemoApp
 {
@@ -10,5 +11,13 @@ namespace DemoApp
     public interface IUserService
     {
         Task<string> GetSocialSecurityNumberAsync(Guid userId);
+    }
+
+    public class UserService : IUserService, ITransientDependency
+    {
+        public Task<string> GetSocialSecurityNumberAsync(Guid userId)
+        {
+            return Task.FromResult("42");
+        }
     }
 }
