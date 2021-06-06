@@ -33,6 +33,13 @@ namespace FormsApp
 
             return await query.ToListAsync();
         }
+        
+        public async Task DeleteAllDraftsAsync()
+        {
+            var dbContext = await GetDbContextAsync();
+            await dbContext.Database
+                .ExecuteSqlRawAsync("DELETE FROM Forms WHERE IsDraft = 1");
+        }
 
         public async Task<List<Form>> GetList2Async(
             string name, bool includeDrafts = false)
