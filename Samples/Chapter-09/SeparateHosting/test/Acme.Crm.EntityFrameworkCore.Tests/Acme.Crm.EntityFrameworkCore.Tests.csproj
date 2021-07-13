@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Acme.Crm</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Acme.Crm.EntityFrameworkCore\Acme.Crm.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Acme.Crm.TestBase\Acme.Crm.TestBase.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.4.0-rc.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+  </ItemGroup>
+
+</Project>
