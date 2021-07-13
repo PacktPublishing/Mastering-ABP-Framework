@@ -4,6 +4,8 @@
         <TargetFramework>net5.0</TargetFramework>
         <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
         <OutputType>Library</OutputType>
+        <IsPackable>true</IsPackable>
+        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     </PropertyGroup>
     
     <ItemGroup>

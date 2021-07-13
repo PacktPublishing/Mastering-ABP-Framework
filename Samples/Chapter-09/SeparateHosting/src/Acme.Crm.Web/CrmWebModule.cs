@@ -51,7 +51,7 @@ namespace Acme.Crm.Web
                     BasicThemeBundles.Styles.Global,
                     bundle =>
                     {
-                        bundle.AddFiles("/global-styles.css");
+                        bundle.AddFiles("/globalstyles.css");
                     }
                 );
             });

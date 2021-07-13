@@ -102,7 +102,8 @@ namespace Acme.Crm.Web
                     options.FileSets.ReplaceEmbeddedByPhysical<CrmDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Acme.Crm.Domain"));
                     options.FileSets.ReplaceEmbeddedByPhysical<CrmApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Acme.Crm.Application.Contracts"));
                     options.FileSets.ReplaceEmbeddedByPhysical<CrmApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Acme.Crm.Application"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<CrmWebModule>(hostingEnvironment.ContentRootPath);
+                    options.FileSets.ReplaceEmbeddedByPhysical<CrmWebModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Acme.Crm.Web"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<CrmWebHostModule>(hostingEnvironment.ContentRootPath);
                 });
             }
         }
