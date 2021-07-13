@@ -23,16 +23,14 @@
         <EmbeddedResource Include="Views\**\*.css" />
         <EmbeddedResource Include="Components\**\*.js" />
         <EmbeddedResource Include="Components\**\*.css" />
-        <EmbeddedResource Include="wwwroot\**\*.js" />
-        <EmbeddedResource Include="wwwroot\**\*.css" />        
+        <EmbeddedResource Include="wwwroot\**\*.*" />
         <Content Remove="Pages\**\*.js" />
         <Content Remove="Pages\**\*.css" />
         <Content Remove="Views\**\*.js" />
         <Content Remove="Views\**\*.css" />
         <Content Remove="Components\**\*.js" />
         <Content Remove="Components\**\*.css" />
-        <Content Remove="wwwroot\**\*.js" />
-        <Content Remove="wwwroot\**\*.css" />
+        <Content Remove="wwwroot\**\*.*" />
     </ItemGroup>
 
 </Project>

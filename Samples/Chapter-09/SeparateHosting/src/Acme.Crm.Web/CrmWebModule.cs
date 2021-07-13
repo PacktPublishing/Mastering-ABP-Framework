@@ -39,7 +39,7 @@ namespace Acme.Crm.Web
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<CrmWebModule>();
+                options.FileSets.AddEmbedded<CrmWebModule>("Acme.Crm.Web");
             });
         }
 
