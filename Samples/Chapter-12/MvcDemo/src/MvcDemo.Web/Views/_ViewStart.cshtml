@@ -1,0 +1,6 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@inject IThemeManager ThemeManager
+@{
+    // Override the layout for all views
+    Layout = ThemeManager.CurrentTheme.GetLayout(StandardLayouts.Application);
+}
