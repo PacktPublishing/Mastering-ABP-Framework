@@ -183,6 +183,13 @@
   dependencies:
     just-compare "^1.3.0"
 
+"@abp/vue@^4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@abp/vue/-/vue-4.4.0.tgz#5154a08f1620d6cfbd57fb83ba5d1eaf27fbc85f"
+  integrity sha512-sjsgL60vXNRtpo++e1/Vt3TsD6+FYyi1wlpEtf8GdYd4wutjtpxK4d6QoKyVR1Lu+DrUJsEMJ5BJLqXgv0WPkA==
+  dependencies:
+    vue "~2.6.12"
+
 "@fortawesome/fontawesome-free@^5.13.0":
   version "5.13.1"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.1.tgz#c53b4066edae16cd1fd669f687baf031b45fb9d6"
@@ -2601,6 +2608,11 @@ vinyl@^2.0.0:
     cloneable-readable "^1.0.0"
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
+
+vue@~2.6.12:
+  version "2.6.14"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
 which-module@^1.0.0:
   version "1.0.0"

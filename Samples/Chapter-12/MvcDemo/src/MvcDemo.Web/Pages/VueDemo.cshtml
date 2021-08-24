@@ -1,0 +1,12 @@
+﻿@page
+@model MvcDemo.Web.Pages.VueDemoModel
+@section styles {
+    <abp-style src="/Pages/VueDemo.cshtml.css" />
+}
+@section scripts {
+    <abp-script src="/libs/vue/vue.min.js" />
+    <abp-script src="/Pages/VueDemo.cshtml.js" />
+}
+<div id="app">
+    <h2>{{ message }}</h2>
+</div>
