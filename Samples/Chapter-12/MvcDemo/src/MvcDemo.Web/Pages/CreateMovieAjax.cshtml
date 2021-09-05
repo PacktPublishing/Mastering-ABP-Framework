@@ -1,0 +1,32 @@
+﻿@page
+@model MvcDemo.Web.Pages.CreateMovieAjaxModel
+@section scripts
+{
+    <script>
+    $(function (){
+        $('#MovieForm').on('abp-ajax-success', function(){
+            abp.message
+                .success('Successfully saved, thanks :)')
+                .then(function(){
+                    location.href = '/';
+                });            
+        });
+    });    
+    </script>
+}
+<h1>Create a new movie</h1>
+
+<abp-dynamic-form abp-model="Movie"
+                  submit-button="true" 
+                  data-ajaxForm="true"
+                  id="MovieForm" />
+
+@*<form method="post">
+    <abp-input asp-for="Movie.Name" />
+    <abp-select asp-for="Movie.Genre" />
+    <abp-input asp-for="Movie.Description" />
+    <abp-input asp-for="Movie.Price" />
+    <abp-input asp-for="Movie.ReleaseDate" />
+    <abp-input asp-for="Movie.PreOrder" />
+    <abp-button type="submit" button-type="Primary" text="Submit"/>
+</form>*@
