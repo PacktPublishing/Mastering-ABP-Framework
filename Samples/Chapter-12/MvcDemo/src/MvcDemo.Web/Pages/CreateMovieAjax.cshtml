@@ -5,13 +5,10 @@
     <script>
     $(function (){
         $('#MovieForm').on('abp-ajax-success', function(){
-            abp.message
-                .success('Successfully saved, thanks :)')
-                .then(function(){
-                    location.href = '/';
-                });            
+            $('#MovieForm').slideUp();
+            abp.message.success('Successfully saved, thanks :)');
         });
-    });    
+    });
     </script>
 }
 <h1>Create a new movie</h1>
