@@ -1,0 +1,22 @@
+﻿@page
+@model MvcDemo.Web.Pages.ModalsDemo
+@section scripts {
+    <script>
+    
+    var simpleModal = new abp.ModalManager({
+        viewUrl: '/MySimpleModal'
+    });
+    
+    $(function (){
+        $('#Button1').click(function (){
+            simpleModal.open({
+                productId: 42 //get from somewhere...
+            });
+        });
+    });
+    </script>
+}
+<h1>Modals Demo</h1>
+<abp-button text="Open the simple modal!"
+            button-type="Primary"
+            id="Button1" />
