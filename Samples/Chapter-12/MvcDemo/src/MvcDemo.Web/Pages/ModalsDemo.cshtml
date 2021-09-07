@@ -1,6 +1,7 @@
 ﻿@page
 @model MvcDemo.Web.Pages.ModalsDemo
 @section scripts {
+    @*<abp-script src="/Pages/ModalWithForm.cshtml.js" />*@
     <script>
     
     var simpleModal = new abp.ModalManager({
@@ -8,7 +9,9 @@
     });
     
     var newMovieModal = new abp.ModalManager({
-        viewUrl: '/ModalWithForm'
+        viewUrl: '/ModalWithForm',
+        scriptUrl: '/Pages/ModalWithForm.cshtml.js',
+        modalClass: 'MovieCreation'
     });
     
     newMovieModal.onResult(function (e, data){
