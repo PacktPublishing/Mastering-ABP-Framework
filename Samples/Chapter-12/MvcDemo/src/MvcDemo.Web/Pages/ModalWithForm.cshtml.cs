@@ -4,7 +4,7 @@ using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
 namespace MvcDemo.Web.Pages
 {
-    public class CreateMovieAjaxModel : AbpPageModel
+    public class ModalWithForm : AbpPageModel
     {
         [BindProperty]
         public MovieViewModel Movie { get; set; }
@@ -18,7 +18,7 @@ namespace MvcDemo.Web.Pages
         {
             ValidateModel();
             //TODO: Create a new movie
-            return NoContent();
+            return Content("42");
         }
     }
 }
