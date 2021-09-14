@@ -9,6 +9,7 @@
     "DisplayName:Description": "Description",
     "DisplayName:Genre": "Genre",
     "DisplayName:Price": "Price",
-    "DisplayName:PreOrder": "Pre-order"
+    "DisplayName:PreOrder": "Pre-order",
+    "GreetingMessage": "Hello {0}"
   }
 }
