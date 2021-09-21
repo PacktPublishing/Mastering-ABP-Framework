@@ -11,7 +11,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace DemoApp.Migrations
 {
     [DbContext(typeof(DemoAppDbContext))]
-    [Migration("20210921134244_Initial")]
+    [Migration("20210921140532_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
