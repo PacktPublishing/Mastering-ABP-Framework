@@ -9,10 +9,12 @@
 {
     private async Task DeleteProduct()
     {
-        //TODO: Delete the product
-        Alerts.Success(
-            text: "Successfully deleted the product.", 
-            title: "Deleted!", 
-            dismissible: true);
+        var confirmed = await Message.Confirm(
+            "Are you sure to delete the product?");
+        if (confirmed)
+        {
+    //TODO: Delete the product
+            await Notify.Success("Successfully deleted the product!");
+        }
     }
 }
