@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ApiDemo.Controllers
 {
+    /* ProductAppService is automatically converted to controller, so we don't
+     * need to write such a wrapper controller class with the ABP Framework
+     *
     [ApiController]
     [Route("products")]
     public class ProductController : ControllerBase
@@ -29,4 +32,5 @@ namespace ApiDemo.Controllers
             await _productAppService.UpdateAsync(id, input);
         }
     }
+    */
 }
