@@ -4,15 +4,15 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Volo.Abp;
 
-namespace SimpleModularityDemo
+namespace ModularityDemo
 {
-    public class SimpleModularityDemoHostedService : IHostedService
+    public class ModularityDemoHostedService : IHostedService
     {
         private readonly IAbpApplicationWithExternalServiceProvider _application;
         private readonly IServiceProvider _serviceProvider;
         private readonly HelloWorldService _helloWorldService;
 
-        public SimpleModularityDemoHostedService(
+        public ModularityDemoHostedService(
             IAbpApplicationWithExternalServiceProvider application,
             IServiceProvider serviceProvider,
             HelloWorldService helloWorldService)

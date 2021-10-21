@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.DependencyInjection;
 
-namespace SimpleModularityDemo
+namespace ModularityDemo
 {
     public class HelloWorldService : ITransientDependency
     {

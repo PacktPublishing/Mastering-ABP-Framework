@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace SimpleModularityDemo
+namespace ModularityDemo
 {
     public class Program
     {
@@ -52,7 +52,7 @@ namespace SimpleModularityDemo
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddApplication<SimpleModularityDemoModule>();
+                    services.AddApplication<ModularityDemoModule>();
                 });
     }
 }

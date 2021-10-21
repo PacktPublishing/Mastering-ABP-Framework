@@ -251,5 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 
-# SimpleModularityDemo
-src/SimpleModularityDemo.ConsoleApp/Logs/logs.txt
+# ModularityDemo
+src/ModularityDemo.ConsoleApp/Logs/logs.txt
