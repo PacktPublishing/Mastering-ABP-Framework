@@ -59,5 +59,18 @@ namespace ProductManagement.Products
             );
         }
 
+        public async Task<ProductDto> GetAsync(Guid id)
+        {
+            return ObjectMapper.Map<Product, ProductDto>(
+                await _productRepository.GetAsync(id)
+            );
+        }
+
+        public async Task UpdateAsync(Guid id, CreateUpdateProductDto input)
+        {
+            var product = await _productRepository.GetAsync(id);
+            ObjectMapper.Map(input, product);
+        }
+
     }
 }

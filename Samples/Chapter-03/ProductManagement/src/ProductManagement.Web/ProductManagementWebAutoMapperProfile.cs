@@ -9,6 +9,7 @@ namespace ProductManagement.Web
         public ProductManagementWebAutoMapperProfile()
         {
             CreateMap<CreateEditProductViewModel, CreateUpdateProductDto>();
+            CreateMap<ProductDto, CreateEditProductViewModel>();
         }
     }
 }
