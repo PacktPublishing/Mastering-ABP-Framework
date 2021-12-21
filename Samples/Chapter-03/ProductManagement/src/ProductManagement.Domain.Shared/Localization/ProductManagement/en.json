@@ -18,6 +18,8 @@
     "NewProduct": "New Product",
     "Category": "Category",
     "IsFreeCargo": "Free Cargo",
-    "ReleaseDate": "Release Date"
+    "ReleaseDate": "Release Date",
+    "ProductDeletionConfirmationMessage": "Are you sure to delete this book: {0}",
+    "SuccessfullyDeleted": "Successfully deleted!"
   }
 }
