@@ -3,6 +3,17 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "Menu:ProductManagement": "Product Management",
+    "Menu:Products": "Products",
+    "Name": "Name",
+    "CategoryName": "Category name",
+    "Price": "Price",
+    "StockState": "Stock state",
+    "Enum:StockState:0": "Pre-order",
+    "Enum:StockState:1": "In stock",
+    "Enum:StockState:2": "Not available",
+    "Enum:StockState:3": "Stopped",
+    "CreationTime": "Creation time"
   }
 }
