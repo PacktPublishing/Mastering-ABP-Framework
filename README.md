@@ -52,7 +52,7 @@ We will be building an application, so you need to have .NET runtime, ABP CLI, a
 ### Related products <Other books you may enjoy>
 * Web Development with Blazor [[Packt]](https://www.packtpub.com/product/web-development-with-blazor/9781800208728) [[Amazon]](https://www.amazon.com/Web-Development-Blazor-NET-hands/dp/1800208723)
 
-* Customizing ASP.NET Core 6.0 [[Packt]](https://www.packtpub.com/product/customizing-asp-net-core-6-0-second-edition/9781803233604) [[Amazon]](https://www.amazon.com/Customizing-ASP-NET-Core-6-0-applications-ebook/dp/B09K4329QC)
+* Customizing ASP.NET Core 6.0 [[Packt]](https://www.packtpub.com/product/customizing-asp-net-core-6-0-second-edition/9781803233604) [[Amazon]](https://www.amazon.com/Customizing-ASP-NET-Core-6-0-applications-dp-1803233605/dp/1803233605/ref=mt_other?_encoding=UTF8&me=&qid=)
 
 ## Get to Know the Author
 **Halil İbrahim Kalkan** is a computer engineer who loves building reusable libraries, creating distributed solutions, and working on software architectures. He is an expert on Domain Driven Design, Multi-Tenancy, Modularity and Microservice Architecture. Halil has been building software since 1997 (when he was 14) and working as a professional since 2007. He has a lot of articles and talks on software development. He is a very active open-source contributor and built many projects based on the web and Microsoft Technologies. Halil is currently leading the open-source ABP Framework, which provides a complete architectural solution and the necessary infrastructure to implement that architecture.
