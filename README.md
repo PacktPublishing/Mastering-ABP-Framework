@@ -56,3 +56,7 @@ We will be building an application, so you need to have .NET runtime, ABP CLI, a
 
 ## Get to Know the Author
 **Halil İbrahim Kalkan** is a computer engineer who loves building reusable libraries, creating distributed solutions, and working on software architectures. He is an expert on Domain Driven Design, Multi-Tenancy, Modularity and Microservice Architecture. Halil has been building software since 1997 (when he was 14) and working as a professional since 2007. He has a lot of articles and talks on software development. He is a very active open-source contributor and built many projects based on the web and Microsoft Technologies. Halil is currently leading the open-source ABP Framework, which provides a complete architectural solution and the necessary infrastructure to implement that architecture.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801079242">https://packt.link/free-ebook/9781801079242 </a> </p>
